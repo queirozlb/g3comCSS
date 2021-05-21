@@ -1,0 +1,170 @@
+:root {
+  --background: #F5F2FA;
+  --primary: rgb(0, 140, 90);
+  --secondary: rgb(0, 90, 50);
+  --gradient: linear-gradient(90deg, --primary, --secondary);
+  --shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  --fontPrimary: 'Montserrat', sans-serif;
+  --fontSecondary: 'Nunito', sans-serif;
+  --fontColor: #707070;
+  --alturaNavbar: 65px;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  grid-template-areas: content;
+}
+
+/* ESTILIZAÇÃO DA SEÇÃO NOTÍCIAS */
+
+#enfermeira{
+  width: 200px;
+  height: 200px;
+}
+
+.section__news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+}
+
+.section__news .title__section {
+  font-size: 2rem;
+  position: relative;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.section__news .title__section::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--primary);
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+.new {
+  background-color: var(--primary);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: var(--shadow);
+  color: white;
+  transform-origin: 65% 75%;
+  transition: transform .25s;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.new .overlay {
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  bottom: 0;
+  transition: all 0.35s;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.new .overlay a {
+  margin: 1rem;
+  font-family: var(--fontSecondary);
+  text-decoration: unset;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.5rem;
+
+}
+
+.new:hover .overlay {
+  min-height: 20%;
+}
+
+.new:hover {
+  transform: scale(1.02);
+}
+
+.section__news .news {
+  margin-top: 3rem;
+  width: 100%;
+  background-color: white;
+  box-shadow: var(--shadow);
+  -moz-box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow);
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  grid-template-areas: "grid1 grid1 grid1 grid2 grid2 grid2 grid2 grid2"
+    "grid1 grid1 grid1 grid3 grid3 grid4 grid4 grid4"
+    "grid5 grid5 grid6 grid6 grid6 grid4 grid4 grid4"
+  ;
+  gap: 1rem;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 30vh 30vh 40vh;
+}
+
+.grid-1 {
+  grid-area: grid1;
+  background-image: url(../img/new-video-sus.jpg);
+  border-radius: 10px 0 0 0;
+}
+
+.grid-1 .overlay {
+  border-radius: 10px 0 0 0;
+}
+
+.grid-2 {
+  grid-area: grid2;
+  background-image: url(../img/new-video-+.jpg);
+  border-radius: 0 10px 0 0;
+}
+
+.grid-2 .overlay {
+  border-radius: 0 10px 0 0;
+}
+
+.grid-3 {
+  grid-area: grid3;
+  background-image: url(../img/new-audio-bbc.jpg);
+}
+
+.grid-4 {
+  grid-area: grid4;
+  border-radius: 0 0 10px 0;
+  background-image: url(../img/new-mapa.jpg);
+}
+
+.grid-4 .overlay {
+  border-radius: 0 0 10px 0;
+}
+
+.grid-5 {
+  grid-area: grid5;
+  border-radius: 0 0 0 10px;
+  background-image: url(../img/new-audio-globo.jpg);
+}
+
+.grid-5 .overlay {
+  border-radius: 0 0 0 10px;
+}
+
+.grid-6 {
+  grid-area: grid6;
+  background-image: url(../img/new-farmacia.jpg);
+}
